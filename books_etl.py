@@ -29,7 +29,8 @@ if __name__ == "__main__":
             num_processes=20
         ),
 
-        indexer_config=LocalIndexerConfig(input_path=os.getenv("BOOKS_PATH"), recursive=False),
+        indexer_config=LocalIndexerConfig(input_path=os.getenv("BOOKS_PATH"),
+                                          recursive=False),
         downloader_config=LocalDownloaderConfig(),
         source_connection_config=LocalConnectionConfig(),
 

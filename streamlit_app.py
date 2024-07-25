@@ -27,7 +27,7 @@ def get_retriever():
         embedding_key="embeddings",
     )
 
-    return vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 5})
+    return vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 6})
 
 
 def get_question(input):
@@ -50,14 +50,14 @@ def format_docs(docs):
 def get_chain():
     retriever = get_retriever()
 
-    local_model = "llama3" # switch to llama3b
+    local_model = "llama3.1:8b"
     model = ChatOllama(model=local_model,
-                       num_predict=400,
+                       num_predict=500,
                        stop=["<|start_header_id|>", "<|end_header_id|>", "<|eot_id|>", "<|reserved_special_token"])
 
     system_prompt = """
     <|start_header_id|>user<|end_header_id|>
-    You are a helpful and knowledgeably AI Librarian. Use the following context and the users' chat history to 
+    You are a helpful and knowledgeable AI Librarian. Use the following context and the user's chat history to 
     help the user. If you don't know the answer, just say that you don't know.  
     Context: {context}
     Question: {question}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
