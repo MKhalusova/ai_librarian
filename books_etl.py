@@ -26,7 +26,7 @@ if __name__ == "__main__":
         context=ProcessorConfig(
             verbose=True,
             tqdm=True,
-            num_processes=20
+            num_processes=20,
         ),
 
         indexer_config=LocalIndexerConfig(input_path=os.getenv("BOOKS_PATH"),

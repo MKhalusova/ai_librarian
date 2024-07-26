@@ -12,7 +12,6 @@ from langchain_core.messages.base import BaseMessage
 from langchain_community.chat_models import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
-
 st.set_page_config(page_title="Personal Digital Library Assistant")
 st.title("Personal Digital Library Assistant")
 
