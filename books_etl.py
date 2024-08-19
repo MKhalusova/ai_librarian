@@ -1,23 +1,23 @@
 import os
 from dotenv import load_dotenv
 
-from unstructured.ingest.v2.pipeline.pipeline import Pipeline
-from unstructured.ingest.v2.interfaces import ProcessorConfig
-from unstructured.ingest.v2.processes.connectors.local import (
+from unstructured_ingest.v2.pipeline.pipeline import Pipeline
+from unstructured_ingest.v2.interfaces import ProcessorConfig
+from unstructured_ingest.v2.processes.connectors.local import (
     LocalIndexerConfig,
     LocalDownloaderConfig,
     LocalConnectionConfig,
 )
-from unstructured.ingest.v2.processes.connectors.mongodb import (
+from unstructured_ingest.v2.processes.connectors.mongodb import (
     MongoDBConnectionConfig,
     MongoDBUploadStagerConfig,
     MongoDBUploaderConfig,
     MongoDBAccessConfig
 )
 
-from unstructured.ingest.v2.processes.partitioner import PartitionerConfig
-from unstructured.ingest.v2.processes.chunker import ChunkerConfig
-from unstructured.ingest.v2.processes.embedder import EmbedderConfig
+from unstructured_ingest.v2.processes.partitioner import PartitionerConfig
+from unstructured_ingest.v2.processes.chunker import ChunkerConfig
+from unstructured_ingest.v2.processes.embedder import EmbedderConfig
 
 if __name__ == "__main__":
     load_dotenv()
